@@ -1,19 +1,20 @@
 input.onButtonPressed(Button.A, function () {
-    basic.clearScreen()
+    led.unplot(a, b)
     a = a + 1
     led.plot(a, b)
     if (a > 4) {
-        basic.clearScreen()
         a = 0
         led.plot(a, b)
     }
 })
+bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), function () {
+	
+})
 input.onButtonPressed(Button.B, function () {
-    basic.clearScreen()
+    led.unplot(a, b)
     b = b + 1
     led.plot(a, b)
     if (b > 4) {
-        basic.clearScreen()
         b = 0
         led.plot(a, b)
     }
