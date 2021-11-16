@@ -7,9 +7,6 @@ input.onButtonPressed(Button.A, function () {
         led.plot(a, b)
     }
 })
-bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), function () {
-	
-})
 input.onButtonPressed(Button.B, function () {
     led.unplot(a, b)
     b = b + 1
