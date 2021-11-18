@@ -1,4 +1,5 @@
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    led.setBrightness(255)
     a = 0
     b = 0
     while (b < 5) {
@@ -55,6 +56,7 @@ let y = 0
 let x = 0
 let b = 0
 let a = 0
+led.setBrightness(255)
 a = 0
 b = 0
 while (b < 5) {
@@ -102,6 +104,7 @@ basic.forever(function () {
         }
         basic.clearScreen()
         basic.showString("Good Morning")
+        led.setBrightness(60)
         for (let index = 0; index < 1000; index++) {
             for (let index = 0; index < 100; index++) {
                 led.plot(randint(0, 4), randint(0, 4))
