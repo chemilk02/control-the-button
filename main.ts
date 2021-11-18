@@ -1,3 +1,38 @@
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    a = 0
+    b = 0
+    while (b < 5) {
+        while (a < 5) {
+            led.plot(a, b)
+            a = a + 1
+            basic.pause(100)
+        }
+        b = b + 1
+        a = 0
+        basic.pause(100)
+    }
+    for (let index = 0; index < 3; index++) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
+        basic.pause(100)
+    }
+    a = 0
+    b = 0
+    led.plot(a, b)
+})
 input.onButtonPressed(Button.A, function () {
     led.unplot(a, b)
     a = a + 1
@@ -67,5 +102,11 @@ basic.forever(function () {
         }
         basic.clearScreen()
         basic.showString("Good Morning")
+        for (let index = 0; index < 1000; index++) {
+            for (let index = 0; index < 100; index++) {
+                led.plot(randint(0, 4), randint(0, 4))
+            }
+            basic.clearScreen()
+        }
     }
 })
