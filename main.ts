@@ -16,6 +16,8 @@ input.onButtonPressed(Button.B, function () {
         led.plot(a, b)
     }
 })
+let y = 0
+let x = 0
 let b = 0
 let a = 0
 a = 0
@@ -51,3 +53,19 @@ for (let index = 0; index < 3; index++) {
 a = 0
 b = 0
 led.plot(a, b)
+basic.forever(function () {
+    if (input.lightLevel() >= 130) {
+        x = randint(0, 4)
+        y = randint(0, 4)
+        led.plot(a, b)
+        while (!(a == x && b == y)) {
+            led.plot(x, y)
+            music.playTone(262, music.beat(BeatFraction.Whole))
+            music.playTone(294, music.beat(BeatFraction.Whole))
+            music.playTone(330, music.beat(BeatFraction.Whole))
+            basic.pause(100)
+        }
+        basic.clearScreen()
+        basic.showString("Good Morning")
+    }
+})
