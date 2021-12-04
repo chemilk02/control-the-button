@@ -1,8 +1,28 @@
-let a = 0
-let b = 0
-let c = 0
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    control.reset()
+})
+input.onButtonPressed(Button.A, function () {
+    led.unplot(a, b)
+    a = a + 1
+    led.plot(a, b)
+    if (a > 4) {
+        a = 0
+        led.plot(a, b)
+    }
+})
+input.onButtonPressed(Button.B, function () {
+    led.unplot(a, b)
+    b = b + 1
+    led.plot(a, b)
+    if (b > 4) {
+        b = 0
+        led.plot(a, b)
+    }
+})
 let d = 0
-
+let c = 0
+let b = 0
+let a = 0
 led.setBrightness(255)
 a = 0
 b = 0
@@ -34,30 +54,6 @@ for (let index = 0; index < 3; index++) {
         `)
     basic.pause(100)
 }
-
-input.onButtonPressed(Button.A, function () {
-    led.unplot(a, b)
-    a = a + 1
-    led.plot(a, b)
-    if (a > 4) {
-        a = 0
-        led.plot(a, b)
-    }
-})
-input.onButtonPressed(Button.B, function () {
-    led.unplot(a, b)
-    b = b + 1
-    led.plot(a, b)
-    if (b > 4) {
-        b = 0
-        led.plot(a, b)
-    }
-})
-
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    control.reset()
-})
-
 a = 0
 b = 0
 led.plot(a, b)
@@ -75,6 +71,6 @@ basic.forever(function () {
         }
         basic.clearScreen()
         basic.showString("Good Morning")
-        led.setBrightness(60)
+        control.reset()
     }
 })
