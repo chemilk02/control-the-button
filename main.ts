@@ -52,8 +52,8 @@ input.onButtonPressed(Button.B, function () {
         led.plot(a, b)
     }
 })
-let y = 0
-let x = 0
+let d = 0
+let c = 0
 let b = 0
 let a = 0
 led.setBrightness(255)
@@ -93,10 +93,10 @@ led.plot(a, b)
 basic.forever(function () {
     led.plot(a, b)
     if (input.lightLevel() >= 130) {
-        x = randint(0, 4)
-        y = randint(0, 4)
-        while (!(a == x && b == y)) {
-            led.plot(x, y)
+        c = randint(0, 4)
+        d = randint(0, 4)
+        while (!(a == c && b == d)) {
+            led.plot(c, d)
             music.playTone(262, music.beat(BeatFraction.Whole))
             music.playTone(294, music.beat(BeatFraction.Whole))
             music.playTone(330, music.beat(BeatFraction.Whole))
