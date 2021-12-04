@@ -91,10 +91,10 @@ a = 0
 b = 0
 led.plot(a, b)
 basic.forever(function () {
+    led.plot(a, b)
     if (input.lightLevel() >= 130) {
         x = randint(0, 4)
         y = randint(0, 4)
-        led.plot(a, b)
         while (!(a == x && b == y)) {
             led.plot(x, y)
             music.playTone(262, music.beat(BeatFraction.Whole))
